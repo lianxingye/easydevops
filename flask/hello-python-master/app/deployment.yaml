@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-api
+  namespace: flask
+  labels:
+    app: my-python-app
+    type: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-python-app
+      type: backend
+  template:
+    metadata:
+      name: python-api-pod
+      labels:
+        app: my-python-app
+        type: backend
+    spec:
+      containers:
+      - name: restful-python-example
+        image: localhost:5000/hello-python:1.0
+        ports:
+        - containerPort: 5000
