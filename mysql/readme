@@ -1,0 +1,4 @@
+1. deploy pv
+2. deploy deployment
+3. kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword
+this is a client cmd to test connecting mysql server
