@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Build end..'
                 cd hello-kubernetes/app
-                docker build . -t localhost:5000/littleserver:1
+                sh "docker build . -t localhost:5000/littleserver:1"
             }
         }
         stage("Get Dockerfile & Bootstart.sh") {
