@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo "Prepare Git Code"
                 ls
-                cd hello-kubernetes\app
+                cd hello-kubernetes/app
  
                 echo 'Preparing end..'
             }
