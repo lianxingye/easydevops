@@ -15,7 +15,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Build end..'
-                cd hello-kubernetes\app
+                cd hello-kubernetes/app
                 docker build . -t localhost:5000/littleserver:1
             }
         }
