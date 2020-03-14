@@ -37,6 +37,11 @@ def add_users():
     db.commit()
     return Response("Added", status=200, mimetype='application/json')
 
+
+@app.route('/users')
+def get():
+    return jsonify(jsonpickle.encode(user_dict))
+
 @app.route('/users/<uid>')
 def get_users(uid):
     hash = hashlib.sha224(str(uid)).hexdigest()
