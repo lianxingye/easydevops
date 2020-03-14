@@ -6,6 +6,8 @@ pipeline {
         stage('Prepare Git Code') {
             steps {
                 echo "Prepare Git Code"
+                ls
+                cd hello-kubernetes\app
  
                 echo 'Preparing end..'
             }
@@ -13,6 +15,8 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Build end..'
+                cd hello-kubernetes\app
+                docker build . -t localhost:5000/littleserver:1
             }
         }
         stage("Get Dockerfile & Bootstart.sh") {
