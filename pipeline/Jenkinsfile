@@ -37,7 +37,7 @@ pipeline {
         
         stage("Deploy") {
           steps {
-                docker run -d -p 8001:8080 localhost:5000/littleserver:1
+                sh "docker run -d -p 8001:8080 localhost:5000/littleserver:1"
                 echo 'DockerDeploy end..'
                 }
  
