@@ -15,7 +15,7 @@ pipeline {
         stage("Build") {
             steps {
                 echo 'Build end..'
-                sh "cd hello-kubernetes/app;docker build . -t localhost:5000/littleserver:dev"
+                sh "cd hello-kubernetes/app;docker build . -t localhost:5000/littleserver:release1"
             }
         }
         stage("Get Dockerfile & Bootstart.sh") {
@@ -37,7 +37,7 @@ pipeline {
         
         stage("Deploy") {
           steps {
-                sh "docker run -d -p 8001:8080 localhost:5000/littleserver:1"
+                sh "docker run -d -p 8001:8080 localhost:5000/littleserver:release1"
                 echo 'DockerDeploy end..'
                 }
  
